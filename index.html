@@ -28,6 +28,7 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--dark);over
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
+  gap:1.5rem;
   padding:1.1rem 4rem;
   background:rgba(244,241,236,0.93);
   backdrop-filter:blur(14px);
@@ -42,16 +43,24 @@ nav{
   font-size:0.62rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;
   color:var(--accent);margin-left:0.5rem;padding-bottom:2px;
 }
-nav ul{list-style:none;display:flex;gap:2.2rem;align-items:center}
-nav a{color:var(--concrete);text-decoration:none;font-size:0.85rem;font-weight:400;letter-spacing:0.02em;transition:color .2s}
+nav ul{list-style:none;display:flex;gap:1.7rem;align-items:center;flex-wrap:nowrap}
+nav li{flex-shrink:0}
+nav a{color:var(--concrete);text-decoration:none;font-size:0.85rem;font-weight:400;letter-spacing:0.02em;transition:color .2s;white-space:nowrap}
 nav a:hover{color:var(--dark)}
 .nav-cta{
   background:var(--accent);color:var(--white)!important;
   padding:0.55rem 1.3rem;border-radius:2px;
   font-weight:500;font-size:0.8rem;letter-spacing:0.07em;text-transform:uppercase;
+  white-space:nowrap;
   transition:background .2s!important;
 }
 .nav-cta:hover{background:#224B3E!important}
+
+@media (max-width:1100px){
+  nav{ padding:1rem 2rem; }
+  nav ul{ gap:1rem; }
+  nav ul li:not(.li-tel):not(:last-child){ display:none; }
+}
 
 /* ── HERO ── */
 .hero{
@@ -408,11 +417,17 @@ footer p{font-size:0.78rem;color:rgba(180,176,168,0.45)}
     padding:96px 1.2rem 3rem !important;
   }
 
-  /* Menú móvil: dejar logo, teléfono y botón */
+  /* Menú móvil: logo + teléfono (icono) + botón corto */
+  nav{ gap:0.6rem !important; padding:0.9rem 1rem !important; }
   nav ul{ gap:0.5rem !important; }
   nav ul li:not(:last-child):not(.li-tel){ display:none !important; }
   .nav-tel span{ display:none !important; }
   .nav-tel{ padding:0.5rem !important; }
+  .nav-tel svg{ width:17px !important; height:17px !important; }
+  .nav-cta{ padding:0.5rem 0.8rem !important; font-size:0.68rem !important;
+            letter-spacing:0.04em !important; }
+  .logo img{ height:32px !important; }
+  .logo-tag{ display:none !important; }
 
   /* Banda manifiesto: apilar texto y dato */
   .manifesto{
