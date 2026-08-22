@@ -507,6 +507,39 @@ footer p{font-size:0.78rem;color:rgba(180,176,168,0.45)}
   @media(max-width:560px){.montaje-grid{grid-template-columns:1fr;}}
   @media(prefers-reduced-motion:reduce){.montaje-media img,.montaje-media::after{transition:none;}}
 
+
+/* ── FAQ ── */
+.faq-item{
+  background:var(--white);border:1px solid rgba(122,120,112,0.18);
+  border-radius:4px;margin-bottom:0.7rem;overflow:hidden;
+  transition:border-color .2s;
+}
+.faq-item[open]{border-color:rgba(43,94,79,0.4)}
+.faq-item summary{
+  list-style:none;cursor:pointer;
+  padding:1.15rem 3rem 1.15rem 1.3rem;position:relative;
+  font-family:'Outfit',sans-serif;font-size:0.98rem;font-weight:600;
+  color:var(--dark);line-height:1.45;transition:color .2s;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--accent)}
+.faq-item summary::after{
+  content:"";position:absolute;right:1.3rem;top:50%;
+  width:9px;height:9px;margin-top:-6px;
+  border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);
+  transform:rotate(45deg);transition:transform .25s;
+}
+.faq-item[open] summary::after{transform:rotate(-135deg);margin-top:-2px}
+.faq-a{padding:0 1.3rem 1.3rem}
+.faq-a p{
+  color:var(--text-muted);font-size:0.91rem;line-height:1.8;margin:0;
+  padding-top:0.2rem;border-top:1px solid rgba(122,120,112,0.12);
+}
+@media (max-width:860px){
+  #faq, #comparativa{padding:4.5rem 1.2rem !important}
+  .faq-item summary{font-size:0.92rem;padding:1rem 2.6rem 1rem 1.1rem}
+  .faq-a{padding:0 1.1rem 1.1rem}
+}
 </style>
 </head>
 <body>
@@ -522,6 +555,7 @@ footer p{font-size:0.78rem;color:rgba(180,176,168,0.45)}
     <li><a href="#precios">Precios</a></li>
     <li><a href="#proceso">Proceso</a></li>
     <li><a href="#modelos">Modelos</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li class="li-tel"><a href="tel:+34602484547" class="nav-tel" aria-label="Llamar al 602 484 547"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>602 484 547</span></a></li>
     <li class="li-wa"><a href="https://wa.me/34602484547?text=Hola%2C%20me%20interesa%20una%20vivienda%20modular%20Oikos.%20%C2%BFPodr%C3%ADais%20informarme%3F" target="_blank" class="nav-wa" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>WhatsApp</span></a></li>
     <li><a href="#contacto" class="nav-cta">Presupuesto</a></li>
@@ -1123,6 +1157,151 @@ window.addEventListener('DOMContentLoaded',()=>{
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       Precios orientativos a 1.500 &euro;/m&sup2;. Solera y cimentaci&oacute;n siempre aparte. Los m&sup2; definitivos se fijan en el proyecto personalizado.
     </p>
+  </div>
+</section>
+
+
+<!-- ===== COMPARATIVA HORMIGON VS MADERA ===== -->
+<section style="padding:7rem 4rem;background:var(--white)" id="comparativa">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="fade-up" style="margin-bottom:2.8rem">
+      <div class="section-label">Hormig&oacute;n frente a madera</div>
+      <h2>Dos formas de construir, <em>dos resultados distintos</em></h2>
+      <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.8;max-width:640px;margin-top:1.2rem">
+        La madera es un buen material y tiene defensores con razones s&oacute;lidas: es ligera,
+        c&aacute;lida y de huella de carbono baja. Nosotros trabajamos con ella durante a&ntilde;os.
+        Cambiamos al hormig&oacute;n al comprobar c&oacute;mo se comportaba cada uno a lo largo del
+        tiempo. Esta es la comparaci&oacute;n, sin adornos.
+      </p>
+    </div>
+
+    <div class="fade-up" style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+      <table style="width:100%;border-collapse:collapse;font-size:0.9rem;min-width:620px;
+                    background:var(--white);border:1px solid rgba(122,120,112,0.18);border-radius:4px">
+        <thead>
+          <tr style="background:var(--accent);color:var(--white)">
+            <th style="padding:1rem 1.1rem;text-align:left;font-weight:600;font-size:0.72rem;
+                       letter-spacing:0.12em;text-transform:uppercase">Criterio</th>
+            <th style="padding:1rem 1.1rem;text-align:left;font-weight:700;font-size:0.82rem;
+                       letter-spacing:0.05em">Hormig&oacute;n modular</th>
+            <th style="padding:1rem 1.1rem;text-align:left;font-weight:600;font-size:0.82rem;
+                       letter-spacing:0.05em;color:rgba(255,255,255,0.75)">Madera</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr style="">
+          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Vida util estimada</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">Mas de 100 anos</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">50-80 anos con mantenimiento</td>
+        </tr>
+        <tr style=" background:rgba(244,241,236,0.45);">
+          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Mantenimiento estructural</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">Practicamente nulo</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Tratamientos periodicos de la madera</td>
+        </tr>
+        <tr style="">
+          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Comportamiento ante el fuego</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">Material no combustible</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Combustible, requiere protecciones</td>
+        </tr>
+        <tr style=" background:rgba(244,241,236,0.45);">
+          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Termitas y xilofagos</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">No le afectan</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Riesgo real, exige prevencion</td>
+        </tr>
+        <tr style="">
+          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Humedad y lluvia</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">No se pudre ni se deforma</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Sensible si falla la impermeabilizacion</td>
+        </tr>
+        <tr style=" background:rgba(244,241,236,0.45);">
+          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Aislamiento acustico</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">Muy alto por masa del muro</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Menor, necesita capas anadidas</td>
+        </tr>
+        <tr style="">
+          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Inercia termica</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">Alta: estabiliza la temperatura</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Baja: se calienta y enfria rapido</td>
+        </tr>
+        <tr style=" background:rgba(244,241,236,0.45);">
+          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Resistencia sismica</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Certificada segun normativa</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Buena por ligereza</td>
+        </tr>
+        <tr style="">
+          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Peso y cimentacion</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Requiere losa dimensionada</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Cimentacion mas ligera</td>
+        </tr>
+        <tr style=" background:rgba(244,241,236,0.45);">
+          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Plazo de montaje</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Rapido, modulos de fabrica</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Rapido, modulos de fabrica</td>
+        </tr>
+        <tr style="">
+          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Valor a largo plazo</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">Se mantiene y revaloriza</td>
+          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Mayor depreciacion</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="fade-up" style="font-size:0.78rem;color:var(--text-muted);margin-top:1.2rem;line-height:1.6">
+      Valores orientativos para construcci&oacute;n modular de calidad en clima mediterr&aacute;neo.
+      El resultado final depende siempre del proyecto, la ejecuci&oacute;n y el mantenimiento.
+    </p>
+  </div>
+</section>
+
+<!-- ===== PREGUNTAS FRECUENTES ===== -->
+<section style="padding:7rem 4rem;background:var(--bg)" id="faq">
+  <div style="max-width:860px;margin:0 auto">
+    <div class="fade-up" style="margin-bottom:2.8rem">
+      <div class="section-label">Preguntas frecuentes</div>
+      <h2>Lo que m&aacute;s nos <em>preguntan</em></h2>
+      <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.8;max-width:600px;margin-top:1.2rem">
+        Si tu duda no est&aacute; aqu&iacute;, ll&aacute;manos al
+        <a href="tel:+34602484547" style="color:var(--accent);font-weight:600;text-decoration:none;
+           border-bottom:1px solid rgba(43,94,79,0.35)">602 484 547</a>.
+        Respondemos sin compromiso.
+      </p>
+    </div>
+    <div class="fade-up">
+      <details class="faq-item" open>
+        <summary>&iquest;Necesito licencia de obra?</summary>
+        <div class="faq-a"><p>S&iacute;. Una vivienda modular de hormig&oacute;n es una vivienda a todos los efectos: necesita proyecto t&eacute;cnico visado y licencia municipal, igual que una construcci&oacute;n tradicional. Los plazos y requisitos var&iacute;an mucho de un ayuntamiento a otro. Lo revisamos contigo en la consulta inicial, antes de que te comprometas a nada.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>&iquest;Vale cualquier terreno?</summary>
+        <div class="faq-a"><p>No todos. Hacen falta dos cosas: que el terreno sea edificable seg&uacute;n el planeamiento urban&iacute;stico, y que haya acceso para cami&oacute;n y gr&uacute;a, ya que los m&oacute;dulos llegan prefabricados desde f&aacute;brica. La pendiente, el tipo de suelo y la distancia a servicios influyen en el presupuesto de la solera. Analizamos tu parcela sin coste.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>&iquest;Puedo pedir una hipoteca?</summary>
+        <div class="faq-a"><p>S&iacute;. Al tratarse de obra nueva con proyecto visado, licencia y escritura de obra nueva, los bancos la tratan como cualquier otra vivienda. Lo habitual es una hipoteca autopromotor, que se libera por fases seg&uacute;n avanza la obra. Cada entidad tiene sus condiciones: conviene consultarlo antes de cerrar plazos.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>&iquest;Qu&eacute; pasa si llueve durante la obra?</summary>
+        <div class="faq-a"><p>Muy poco, y esa es una de las grandes ventajas del sistema. Los m&oacute;dulos se fabrican bajo cubierta en taller, con control de calidad y sin depender del tiempo. En parcela solo se monta, y el montaje dura d&iacute;as, no meses. El hormig&oacute;n, adem&aacute;s, no se deteriora con la humedad.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>&iquest;El hormig&oacute;n no da calor en verano?</summary>
+        <div class="faq-a"><p>Al contrario. La masa t&eacute;rmica del hormig&oacute;n act&uacute;a como un regulador: absorbe el calor del d&iacute;a y lo libera lentamente por la noche, suavizando los picos de temperatura. Sumado al aislamiento de poliuretano proyectado en el interior y al SATE exterior, el resultado es una vivienda que se mantiene fresca en verano y templada en invierno, con menos gasto en climatizaci&oacute;n.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>&iquest;Se puede ampliar m&aacute;s adelante?</summary>
+        <div class="faq-a"><p>S&iacute;. El sistema modular permite planificar ampliaciones futuras. Conviene preverlo desde el proyecto inicial, porque condiciona la cimentaci&oacute;n y las instalaciones. Si crees que en unos a&ntilde;os querr&aacute;s crecer, d&iacute;noslo desde el principio.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>&iquest;Qu&eacute; garant&iacute;a tiene la vivienda?</summary>
+        <div class="faq-a"><p>Las que marca la Ley de Ordenaci&oacute;n de la Edificaci&oacute;n: diez a&ntilde;os por da&ntilde;os estructurales, tres por habitabilidad e instalaciones y uno por acabados. Adem&aacute;s, cada material y equipo instalado conserva su propia garant&iacute;a de fabricante.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>&iquest;Trabaj&aacute;is fuera de Alicante?</summary>
+        <div class="faq-a"><p>S&iacute;, construimos en todo el territorio nacional. El transporte de los m&oacute;dulos se calcula seg&uacute;n la distancia y se refleja en el presupuesto. Conocemos la normativa local de cada zona donde trabajamos.</p></div>
+      </details>
+    </div>
   </div>
 </section>
 
