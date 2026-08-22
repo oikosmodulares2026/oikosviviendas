@@ -132,6 +132,16 @@ h1 .light{font-weight:400;color:var(--concrete)}
   transition:border-color .2s,color .2s;
 }
 .btn-ghost:hover{color:var(--accent);border-color:var(--accent)}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:0.65rem;
+  background:transparent;color:var(--accent);
+  padding:0.95rem 2rem;border-radius:2px;text-decoration:none;
+  border:1.5px solid var(--accent);
+  font-weight:600;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;
+  transition:background .2s,color .2s,transform .15s;
+}
+.btn-outline svg{width:17px;height:17px;stroke:currentColor;flex-shrink:0}
+.btn-outline:hover{background:var(--accent);color:var(--white);transform:translateY(-1px)}
 .hero-pills{
   display:flex;gap:0.8rem;margin-top:3.5rem;flex-wrap:wrap;
 }
@@ -573,7 +583,9 @@ footer p{font-size:0.78rem;color:rgba(180,176,168,0.45)}
         Pedir presupuesto gratis
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="#modelos" class="btn-ghost">Ver modelos →</a>
+      <a href="#modelos" class="btn-outline">Ver modelos
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
     <div class="hero-pills">
       <span class="pill"><span class="pill-dot"></span>Estructura de hormigón</span>
