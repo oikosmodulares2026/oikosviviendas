@@ -624,9 +624,57 @@ footer p{font-size:0.78rem;color:rgba(180,176,168,0.45)}
 }
 @media (max-width:860px){
   #faq, #comparativa{padding:4.5rem 1.2rem !important}
+  #comparativa .cierre-pad{padding:2rem 1.4rem !important}
   .faq-item summary{font-size:0.92rem;padding:1rem 2.6rem 1rem 1.1rem}
   .faq-a{padding:0 1.1rem 1.1rem}
 }
+
+/* ============================================================
+   AJUSTE VISUAL 05/09/2026  ·  tipografia mas grande + color
+   Todo el cambio esta contenido aqui: borrando este bloque
+   la web vuelve exactamente a como estaba.
+   ============================================================ */
+
+/* --- 1. ESCALA TIPOGRAFICA: base 16px -> 17.5px (+9%) --- */
+html{font-size:17.5px}
+@media (max-width:600px){ html{font-size:17px} }
+
+/* El nav se congela en pixeles para que no crezca ni se desborde */
+nav{padding:17px 64px}
+nav a{font-size:13.6px}
+nav ul{gap:27px}
+.nav-cta{font-size:12.8px;padding:9px 21px}
+.nav-tel{font-size:13.8px}
+.logo-tag{font-size:11.5px}
+.logo-main{font-size:26px}
+.logo-sub{font-size:10px}
+@media (max-width:1350px){ nav{padding:16px 32px} nav ul{gap:18px} nav a{font-size:12.8px} }
+@media (max-width:820px){ nav{padding:14px 18px} }
+
+/* --- 2. LEGIBILIDAD: mas contraste y mas aire entre lineas --- */
+:root{
+  --concrete:#6B6961;      /* antes #7A7870 - texto secundario mas legible */
+  --text-muted:#69695D;    /* antes #7A7A6E */
+  --sand:#D19A62;          /* antes #C9B99A - dorado calido, mas vivo */
+  --accent-light:#C6E3D9;  /* antes #D6E8E3 - verde claro con mas cuerpo */
+  --terra:#C0653A;         /* NUEVO acento calido de marca */
+  --terra-soft:#F3E2D8;
+}
+body{-webkit-font-smoothing:antialiased}
+.hero-desc{font-size:1.05rem;line-height:1.85}
+.faq-item summary{font-size:1.02rem}
+.faq-a p{font-size:0.95rem;line-height:1.85}
+#comparativa table{font-size:0.9rem}
+#comparativa h3{font-size:1.08rem}
+
+/* --- 3. COLOR: acento terracota en los detalles --- */
+.section-label::before{background:var(--terra);width:30px;height:2px}
+.eyebrow-line{background:var(--terra);width:34px;height:2px}
+.section-label{color:var(--accent)}
+.btn-outline:hover{background:var(--terra);border-color:var(--terra);color:var(--white)}
+.faq-item[open]{border-color:rgba(192,101,58,0.45)}
+.faq-item[open] summary{color:var(--terra)}
+
 </style>
 </head>
 <body>
@@ -1373,88 +1421,143 @@ window.addEventListener('DOMContentLoaded',()=>{
 </section>
 
 
-<!-- ===== COMPARATIVA HORMIGON VS MADERA ===== -->
+<!-- ===== COMPARATIVA HORMIGON VS OTROS SISTEMAS ===== -->
 <section style="padding:7rem 4rem;background:var(--white)" id="comparativa">
-  <div style="max-width:1100px;margin:0 auto">
-    <div class="fade-up" style="margin-bottom:2.8rem">
-      <div class="section-label">Hormig&oacute;n frente a madera</div>
-      <h2>Dos formas de construir, <em>dos resultados distintos</em></h2>
-      <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.8;max-width:640px;margin-top:1.2rem">
-        La madera es un buen material y tiene defensores con razones s&oacute;lidas: es ligera,
-        c&aacute;lida y de huella de carbono baja. Nosotros trabajamos con ella durante a&ntilde;os.
-        Cambiamos al hormig&oacute;n al comprobar c&oacute;mo se comportaba cada uno a lo largo del
-        tiempo. Esta es la comparaci&oacute;n, sin adornos.
+  <div style="max-width:1180px;margin:0 auto">
+    <div class="fade-up" style="margin-bottom:2.4rem">
+      <div class="section-label">Hormig&oacute;n frente a otros sistemas</div>
+      <h2>No todos los prefabricados <em>son lo mismo</em></h2>
+      <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.8;max-width:680px;margin-top:1.2rem">
+        Cuando alguien pide presupuesto de casa modular suele estar comparando cuatro cosas
+        muy distintas: madera, acero ligero, contenedor mar&iacute;timo y obra tradicional.
+        Todas tienen su raz&oacute;n de ser y nosotros hemos trabajado con varias de ellas.
+        Elegimos el hormig&oacute;n despu&eacute;s de 35 a&ntilde;os viendo c&oacute;mo se comporta
+        cada sistema con el paso del tiempo. Esta es la comparaci&oacute;n, sin adornos.
       </p>
     </div>
 
+    <p class="fade-up" style="font-size:0.75rem;color:var(--text-muted);margin:0 0 0.7rem;letter-spacing:0.04em">
+      Desliza la tabla lateralmente para ver todos los sistemas &rarr;
+    </p>
+
     <div class="fade-up" style="overflow-x:auto;-webkit-overflow-scrolling:touch">
-      <table style="width:100%;border-collapse:collapse;font-size:0.9rem;min-width:620px;
+      <table style="width:100%;border-collapse:collapse;font-size:0.86rem;min-width:1000px;
                     background:var(--white);border:1px solid rgba(122,120,112,0.18);border-radius:4px">
         <thead>
           <tr style="background:var(--accent);color:var(--white)">
-            <th style="padding:1rem 1.1rem;text-align:left;font-weight:600;font-size:0.72rem;
+            <th scope="col" style="padding:1rem 1rem;text-align:left;font-weight:600;font-size:0.7rem;
                        letter-spacing:0.12em;text-transform:uppercase">Criterio</th>
-            <th style="padding:1rem 1.1rem;text-align:left;font-weight:700;font-size:0.82rem;
-                       letter-spacing:0.05em">Hormig&oacute;n modular</th>
-            <th style="padding:1rem 1.1rem;text-align:left;font-weight:600;font-size:0.82rem;
-                       letter-spacing:0.05em;color:rgba(255,255,255,0.75)">Madera</th>
+            <th scope="col" style="padding:1rem 1rem;text-align:left;font-weight:700;font-size:0.8rem;letter-spacing:0.04em;background:rgba(255,255,255,0.12)">Hormigón modular <span style='display:block;font-weight:600;font-size:0.66rem;letter-spacing:0.08em;opacity:0.8'>Oikos</span></th>
+            <th scope="col" style="padding:1rem 1rem;text-align:left;font-weight:600;font-size:0.8rem;letter-spacing:0.04em;color:rgba(255,255,255,0.78)">Madera</th>
+            <th scope="col" style="padding:1rem 1rem;text-align:left;font-weight:600;font-size:0.8rem;letter-spacing:0.04em;color:rgba(255,255,255,0.78)">Acero ligero</th>
+            <th scope="col" style="padding:1rem 1rem;text-align:left;font-weight:600;font-size:0.8rem;letter-spacing:0.04em;color:rgba(255,255,255,0.78)">Contenedor marítimo</th>
+            <th scope="col" style="padding:1rem 1rem;text-align:left;font-weight:600;font-size:0.8rem;letter-spacing:0.04em;color:rgba(255,255,255,0.78)">Obra tradicional</th>
           </tr>
         </thead>
         <tbody>
         <tr style="">
-          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Vida útil estimada</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">Más de 100 años</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">50-80 años con mantenimiento</td>
+          <td style="padding:0.9rem 1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Vida útil estimada</td>
+          <td style="padding:0.9rem 1rem;color:var(--accent);font-weight:600;background:rgba(214,232,227,0.38);border-bottom:1px solid rgba(122,120,112,0.12)">Más de 100 años</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">50-80 años con mantenimiento</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">50-80 años</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">25-40 años</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Más de 100 años</td>
         </tr>
         <tr style=" background:rgba(244,241,236,0.45);">
-          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Mantenimiento estructural</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">Prácticamente nulo</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Tratamientos periódicos de la madera</td>
+          <td style="padding:0.9rem 1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Mantenimiento estructural</td>
+          <td style="padding:0.9rem 1rem;color:var(--accent);font-weight:600;background:rgba(214,232,227,0.38);border-bottom:1px solid rgba(122,120,112,0.12)">Prácticamente nulo</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Tratamientos periódicos de la madera</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Revisión de corrosión, sobre todo en costa</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Repintados antioxidantes frecuentes</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Prácticamente nulo</td>
         </tr>
         <tr style="">
-          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Comportamiento ante el fuego</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">Material no combustible</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Combustible, requiere protecciones</td>
+          <td style="padding:0.9rem 1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Comportamiento ante el fuego</td>
+          <td style="padding:0.9rem 1rem;color:var(--accent);font-weight:600;background:rgba(214,232,227,0.38);border-bottom:1px solid rgba(122,120,112,0.12)">Material no combustible</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Combustible, requiere protecciones</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">No combustible, pero pierde resistencia con el calor</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Chapa no combustible; el aislante interior puede no serlo</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Material no combustible</td>
         </tr>
         <tr style=" background:rgba(244,241,236,0.45);">
-          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Termitas y xilófagos</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">No le afectan</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Riesgo real, exige prevención</td>
+          <td style="padding:0.9rem 1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Termitas y xilófagos</td>
+          <td style="padding:0.9rem 1rem;color:var(--accent);font-weight:600;background:rgba(214,232,227,0.38);border-bottom:1px solid rgba(122,120,112,0.12)">No le afectan</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Riesgo real, exige prevención</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">No le afectan</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">No le afectan</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">No le afectan</td>
         </tr>
         <tr style="">
-          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Humedad y lluvia</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">No se pudre ni se deforma</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Sensible si falla la impermeabilización</td>
+          <td style="padding:0.9rem 1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Humedad y lluvia</td>
+          <td style="padding:0.9rem 1rem;color:var(--accent);font-weight:600;background:rgba(214,232,227,0.38);border-bottom:1px solid rgba(122,120,112,0.12)">No se pudre ni se deforma</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Sensible si falla la impermeabilización</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Riesgo de corrosión si entra agua en el entramado</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Condensaciones habituales y óxido</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Buen comportamiento</td>
         </tr>
         <tr style=" background:rgba(244,241,236,0.45);">
-          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Aislamiento acústico</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">Muy alto por masa del muro</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Menor, necesita capas añadidas</td>
+          <td style="padding:0.9rem 1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Aislamiento acústico</td>
+          <td style="padding:0.9rem 1rem;color:var(--accent);font-weight:600;background:rgba(214,232,227,0.38);border-bottom:1px solid rgba(122,120,112,0.12)">Muy alto por la masa del muro</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Menor, necesita capas añadidas</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Bajo, depende del relleno del entramado</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Muy bajo: chapa fina</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Alto</td>
         </tr>
         <tr style="">
-          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Inercia térmica</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">Alta: estabiliza la temperatura</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Baja: se calienta y enfría rápido</td>
+          <td style="padding:0.9rem 1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Inercia térmica</td>
+          <td style="padding:0.9rem 1rem;color:var(--accent);font-weight:600;background:rgba(214,232,227,0.38);border-bottom:1px solid rgba(122,120,112,0.12)">Alta: estabiliza la temperatura</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Baja: se calienta y enfría rápido</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Casi nula: la envolvente es ligera</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Nula: se calienta y enfría de golpe</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Alta</td>
         </tr>
         <tr style=" background:rgba(244,241,236,0.45);">
-          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Resistencia sísmica</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Certificada según normativa</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Buena por ligereza</td>
+          <td style="padding:0.9rem 1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Sensación dentro de la casa</td>
+          <td style="padding:0.9rem 1rem;color:var(--accent);font-weight:600;background:rgba(214,232,227,0.38);border-bottom:1px solid rgba(122,120,112,0.12)">Muro macizo, sin vibraciones ni crujidos</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Suelos y tabiques más ligeros</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Estructura ligera, transmite pisadas</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Ancho útil de unos 2,35 m por módulo</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Muro macizo</td>
         </tr>
         <tr style="">
-          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Peso y cimentación</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Requiere losa dimensionada</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Cimentacion mas ligera</td>
+          <td style="padding:0.9rem 1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Resistencia sísmica</td>
+          <td style="padding:0.9rem 1rem;color:var(--accent);font-weight:600;background:rgba(214,232,227,0.38);border-bottom:1px solid rgba(122,120,112,0.12)">Certificada según normativa</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Buena por ligereza</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Buena por ligereza</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Buena por ligereza</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Según proyecto</td>
         </tr>
         <tr style=" background:rgba(244,241,236,0.45);">
-          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Plazo de montaje</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Rápido, módulos de fábrica</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Rápido, módulos de fábrica</td>
+          <td style="padding:0.9rem 1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Peso y cimentación</td>
+          <td style="padding:0.9rem 1rem;color:var(--accent);font-weight:600;background:rgba(214,232,227,0.38);border-bottom:1px solid rgba(122,120,112,0.12)">Requiere losa dimensionada</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Cimentación más ligera</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Cimentación más ligera</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Cimentación ligera</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Losa o zapatas, con más plazo de obra</td>
         </tr>
         <tr style="">
-          <td style="padding:0.95rem 1.1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Valor a largo plazo</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(122,120,112,0.12)">Se mantiene y revaloriza</td>
-          <td style="padding:0.95rem 1.1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Mayor depreciación</td>
+          <td style="padding:0.9rem 1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Plazo hasta entrega</td>
+          <td style="padding:0.9rem 1rem;color:var(--accent);font-weight:600;background:rgba(214,232,227,0.38);border-bottom:1px solid rgba(122,120,112,0.12)">7 meses desde licencia; montaje en días</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Rápido, módulos de fábrica</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Rápido, módulos de fábrica</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Muy rápido</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">12-18 meses habitual</td>
+        </tr>
+        <tr style=" background:rgba(244,241,236,0.45);">
+          <td style="padding:0.9rem 1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Licencia e hipoteca</td>
+          <td style="padding:0.9rem 1rem;color:var(--accent);font-weight:600;background:rgba(214,232,227,0.38);border-bottom:1px solid rgba(122,120,112,0.12)">Vivienda de obra nueva: licencia, escritura e hipoteca autopromotor</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Igual, con proyecto visado y licencia</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Igual, con proyecto visado y licencia</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Suele dar problemas de legalización y tasación</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Vivienda de obra nueva</td>
+        </tr>
+        <tr style="">
+          <td style="padding:0.9rem 1rem;font-weight:600;color:var(--dark);border-bottom:1px solid rgba(122,120,112,0.12)">Valor a largo plazo</td>
+          <td style="padding:0.9rem 1rem;color:var(--accent);font-weight:600;background:rgba(214,232,227,0.38);border-bottom:1px solid rgba(122,120,112,0.12)">Se mantiene y revaloriza</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Mayor depreciación</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Depreciación media</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Depreciación alta</td>
+          <td style="padding:0.9rem 1rem;color:var(--text-muted);border-bottom:1px solid rgba(122,120,112,0.12)">Se mantiene</td>
         </tr>
         </tbody>
       </table>
@@ -1464,6 +1567,87 @@ window.addEventListener('DOMContentLoaded',()=>{
       Valores orientativos para construcci&oacute;n modular de calidad en clima mediterr&aacute;neo.
       El resultado final depende siempre del proyecto, la ejecuci&oacute;n y el mantenimiento.
     </p>
+
+    <div class="fade-up" style="margin-top:3.5rem">
+      <h3 style="font-size:1.35rem;margin:0 0 0.6rem;color:var(--dark)">Si est&aacute;s comparando presupuestos</h3>
+      <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.75;max-width:680px;margin:0 0 1.8rem">
+        Lo honesto es decirlo claro: cada sistema tiene algo bueno. Aqu&iacute; tienes qu&eacute; hace
+        bien cada uno y en qu&eacute; se diferencia de una vivienda Oikos.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem">
+      <div style="background:var(--white);border:1px solid rgba(122,120,112,0.18);border-radius:4px;padding:1.5rem 1.4rem">
+        <h3 style="font-size:1rem;margin:0 0 0.9rem;color:var(--dark)">Madera</h3>
+        <p style="font-size:0.82rem;line-height:1.65;color:var(--text-muted);margin:0 0 0.9rem">
+          <strong style="color:var(--accent);display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem">Su punto fuerte</strong>
+          Ligera, cálida y de huella de carbono baja. Bien ejecutada y bien mantenida es una casa excelente.
+        </p>
+        <p style="font-size:0.82rem;line-height:1.65;color:var(--text-muted);margin:0">
+          <strong style="color:var(--dark);display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem">La diferencia con Oikos</strong>
+          Es un material vivo: necesita tratamientos periódicos, vigilar humedades y protegerse frente a termitas y fuego. Trabajamos con ella durante años y cambiamos al ver cómo se comportaban las dos a los quince y a los veinte años.
+        </p>
+      </div>
+      <div style="background:var(--white);border:1px solid rgba(122,120,112,0.18);border-radius:4px;padding:1.5rem 1.4rem">
+        <h3 style="font-size:1rem;margin:0 0 0.9rem;color:var(--dark)">Acero ligero (steel framing)</h3>
+        <p style="font-size:0.82rem;line-height:1.65;color:var(--text-muted);margin:0 0 0.9rem">
+          <strong style="color:var(--accent);display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem">Su punto fuerte</strong>
+          Perfilería galvanizada, muy rápida de montar y con cimentación ligera.
+        </p>
+        <p style="font-size:0.82rem;line-height:1.65;color:var(--text-muted);margin:0">
+          <strong style="color:var(--dark);display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem">La diferencia con Oikos</strong>
+          La envolvente es hueca: casi no tiene masa, así que el aislamiento acústico y la inercia térmica dependen por completo de los rellenos. En zona de costa hay que cuidar mucho la corrosión.
+        </p>
+      </div>
+      <div style="background:var(--white);border:1px solid rgba(122,120,112,0.18);border-radius:4px;padding:1.5rem 1.4rem">
+        <h3 style="font-size:1rem;margin:0 0 0.9rem;color:var(--dark)">Contenedor marítimo</h3>
+        <p style="font-size:0.82rem;line-height:1.65;color:var(--text-muted);margin:0 0 0.9rem">
+          <strong style="color:var(--accent);display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem">Su punto fuerte</strong>
+          Es la opción más barata y la más rápida de colocar.
+        </p>
+        <p style="font-size:0.82rem;line-height:1.65;color:var(--text-muted);margin:0">
+          <strong style="color:var(--dark);display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem">La diferencia con Oikos</strong>
+          No está pensado para vivir: chapa de 2 mm, condensaciones, ancho útil de unos 2,35 m y una vida útil corta. Además suele complicar la licencia, la escritura y la tasación bancaria.
+        </p>
+      </div>
+      <div style="background:var(--white);border:1px solid rgba(122,120,112,0.18);border-radius:4px;padding:1.5rem 1.4rem">
+        <h3 style="font-size:1rem;margin:0 0 0.9rem;color:var(--dark)">Obra tradicional (ladrillo)</h3>
+        <p style="font-size:0.82rem;line-height:1.65;color:var(--text-muted);margin:0 0 0.9rem">
+          <strong style="color:var(--accent);display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem">Su punto fuerte</strong>
+          Resultado sólido y duradero, el sistema que conocemos desde hace 35 años.
+        </p>
+        <p style="font-size:0.82rem;line-height:1.65;color:var(--text-muted);margin:0">
+          <strong style="color:var(--dark);display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem">La diferencia con Oikos</strong>
+          Es el mismo destino por otro camino: 12-18 meses de obra en tu parcela, presupuesto que se mueve sobre la marcha y dependencia de mano de obra cualificada cada vez más escasa. Industrializar es lo que nos permitió quitar esos tres problemas.
+        </p>
+      </div>
+      </div>
+    </div>
+
+    <div class="fade-up" style="margin-top:3.5rem;position:relative;overflow:hidden;
+                background:linear-gradient(135deg,#2B5E4F 0%,#1F4639 100%);
+                border-radius:5px;box-shadow:0 18px 45px rgba(28,28,24,0.16);max-width:900px">
+      <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:var(--terra)"></div>
+      <div aria-hidden="true" style="position:absolute;right:-40px;top:-60px;width:260px;height:260px;
+                  border-radius:50%;background:rgba(209,154,98,0.10)"></div>
+      <div class="cierre-pad" style="position:relative;padding:2.8rem 2.6rem 2.6rem 3rem">
+        <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+                    color:var(--sand);margin-bottom:1rem">Nuestra posici&oacute;n, resumida</div>
+        <p style="margin:0;font-size:1.02rem;line-height:1.85;color:rgba(253,252,249,0.94);max-width:660px">
+          El hormig&oacute;n pesa m&aacute;s y exige una solera bien dimensionada &mdash; eso es cierto
+          y lo presupuestamos aparte por honestidad. A cambio te llevas una vivienda que
+          <strong style="color:var(--white);font-weight:600">no arde, no se pudre, no le entran termitas,
+          no cruje</strong>, aguanta m&aacute;s de 100 a&ntilde;os sin mantenimiento estructural y se tasa
+          y se hipoteca como cualquier otra casa. <em style="color:var(--sand);font-style:normal;font-weight:600">Por eso cambiamos.</em>
+        </p>
+        <div style="margin-top:1.9rem">
+          <a href="#contacto" style="display:inline-block;background:var(--sand);color:#1C1C18;
+             text-decoration:none;padding:0.8rem 1.7rem;border-radius:2px;font-weight:600;
+             font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;
+             transition:transform .2s,box-shadow .2s"
+             onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 20px rgba(0,0,0,0.25)'"
+             onmouseout="this.style.transform='';this.style.boxShadow=''">Pedir presupuesto y comparar</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1547,7 +1731,7 @@ window.addEventListener('DOMContentLoaded',()=>{
           <div class="trust-icon" style="background:rgba(200,185,154,0.15)">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <p style="color:rgba(200,185,154,0.8)"><a href="tel:+34602484547" style="color:var(--sand);font-weight:700;font-size:1.25rem;text-decoration:none;letter-spacing:0.02em">602 484 547</a><br/><strong style="color:var(--sand)">oikosviviendas@gmail.com</strong></p>
+          <p style="color:rgba(209,154,98,0.85)"><a href="tel:+34602484547" style="color:var(--sand);font-weight:700;font-size:1.25rem;text-decoration:none;letter-spacing:0.02em">602 484 547</a><br/><strong style="color:var(--sand)">oikosviviendas@gmail.com</strong></p>
         </div>
       </div>
     </div>
