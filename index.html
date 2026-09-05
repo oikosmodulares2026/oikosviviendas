@@ -709,6 +709,29 @@ html{scroll-padding-top:96px}      /* los enlaces del menu no dejan el titulo de
 .form-box h3{font-size:1.28rem}
 .form-box p{font-size:0.98rem;line-height:1.7}
 
+
+/* --- 6. BOTON FLOTANTE DE WHATSAPP (05/09/2026) --- */
+.wa-float{
+  position:fixed; right:20px; bottom:20px; z-index:200;
+  display:inline-flex; align-items:center; gap:10px;
+  background:#25D366; color:#fff !important; text-decoration:none;
+  padding:13px 20px 13px 16px; border-radius:40px;
+  box-shadow:0 8px 24px rgba(28,28,24,0.28);
+  font-family:'Outfit',sans-serif; font-weight:600; font-size:15px; letter-spacing:0.01em;
+  transition:transform .18s, box-shadow .18s;
+  animation:waIn .45s ease-out .9s both;
+}
+.wa-float:hover{transform:translateY(-3px); box-shadow:0 12px 30px rgba(28,28,24,0.34)}
+.wa-float svg{width:27px; height:27px; flex-shrink:0}
+@keyframes waIn{from{opacity:0; transform:translateY(18px)} to{opacity:1; transform:none}}
+/* en pantallas estrechas queda solo el icono, para no tapar contenido */
+@media (max-width:600px){
+  .wa-float{right:16px; bottom:16px; padding:14px; border-radius:50%}
+  .wa-float-txt{display:none}
+  .wa-float svg{width:28px; height:28px}
+}
+@media (prefers-reduced-motion:reduce){ .wa-float{animation:none} }
+
 </style>
 </head>
 <body>
@@ -1898,5 +1921,12 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')c();});})();
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Modelo Europa — casa modular de hormigón","description":"Vivienda modular prefabricada de hormigón de 80 m², planta en L, con 3 dormitorios y 2 baños. Entrega llave en mano en 7 meses desde la concesión de la licencia municipal. Solera y cimentación aparte.","brand":{"@type":"Brand","name":"Oikos Viviendas"},"image":"https://oikosviviendas.casa/img/modelo-europa-casa-modular-hormigon-1.webp","category":"Vivienda modular prefabricada de hormigón","offers":{"@type":"Offer","price":120000,"priceCurrency":"EUR","availability":"https://schema.org/InStock","validFrom":"2026-08-24","priceValidUntil":"2026-12-31","seller":{"@id":"https://oikosviviendas.casa/#empresa"}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Modelo Titán — casa modular de hormigón","description":"Vivienda modular prefabricada de hormigón de 98,27 m², planta en L, con 3 dormitorios y 2 baños. Entrega llave en mano en 7 meses desde la concesión de la licencia municipal. Solera y cimentación aparte.","brand":{"@type":"Brand","name":"Oikos Viviendas"},"image":"https://oikosviviendas.casa/img/modelo-titan-casa-modular-hormigon-1.webp","category":"Vivienda modular prefabricada de hormigón","offers":{"@type":"Offer","price":147405,"priceCurrency":"EUR","availability":"https://schema.org/InStock","validFrom":"2026-08-24","priceValidUntil":"2026-12-31","seller":{"@id":"https://oikosviviendas.casa/#empresa"}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Necesito licencia de obra?","acceptedAnswer":{"@type":"Answer","text":"Sí. Una vivienda modular de hormigón es una vivienda a todos los efectos: necesita proyecto técnico visado y licencia municipal, igual que una construcción tradicional. Los plazos y requisitos varían mucho de un ayuntamiento a otro. Lo revisamos contigo en la consulta inicial, antes de que te comprometas a nada."}},{"@type":"Question","name":"¿Vale cualquier terreno?","acceptedAnswer":{"@type":"Answer","text":"No todos. Hacen falta dos cosas: que el terreno sea edificable según el planeamiento urbanístico, y que haya acceso para camión y grúa, ya que los módulos llegan prefabricados desde fábrica. La pendiente, el tipo de suelo y la distancia a servicios influyen en el presupuesto de la solera. Analizamos tu parcela sin coste."}},{"@type":"Question","name":"¿Puedo pedir una hipoteca?","acceptedAnswer":{"@type":"Answer","text":"Sí. Al tratarse de obra nueva con proyecto visado, licencia y escritura de obra nueva, los bancos la tratan como cualquier otra vivienda. Lo habitual es una hipoteca autopromotor, que se libera por fases según avanza la obra. Cada entidad tiene sus condiciones: conviene consultarlo antes de cerrar plazos."}},{"@type":"Question","name":"¿Qué pasa si llueve durante la obra?","acceptedAnswer":{"@type":"Answer","text":"Muy poco, y esa es una de las grandes ventajas del sistema. Los módulos se fabrican bajo cubierta en taller, con control de calidad y sin depender del tiempo. En parcela solo se monta, y el montaje dura días, no meses. El hormigón, además, no se deteriora con la humedad."}},{"@type":"Question","name":"¿El hormigón no da calor en verano?","acceptedAnswer":{"@type":"Answer","text":"Al contrario. La masa térmica del hormigón actúa como un regulador: absorbe el calor del día y lo libera lentamente por la noche, suavizando los picos de temperatura. Sumado al aislamiento de poliuretano proyectado en el interior y al SATE exterior, el resultado es una vivienda que se mantiene fresca en verano y templada en invierno, con menos gasto en climatización."}},{"@type":"Question","name":"¿Se puede ampliar más adelante?","acceptedAnswer":{"@type":"Answer","text":"Sí. El sistema modular permite planificar ampliaciones futuras. Conviene preverlo desde el proyecto inicial, porque condiciona la cimentación y las instalaciones. Si crees que en unos años querrás crecer, dínoslo desde el principio."}},{"@type":"Question","name":"¿Qué garantía tiene la vivienda?","acceptedAnswer":{"@type":"Answer","text":"Las que marca la Ley de Ordenación de la Edificación: diez años por daños estructurales, tres por habitabilidad e instalaciones y uno por acabados. Además, cada material y equipo instalado conserva su propia garantía de fabricante."}},{"@type":"Question","name":"¿Trabajáis fuera de Alicante?","acceptedAnswer":{"@type":"Answer","text":"Sí, construimos en todo el territorio nacional. El transporte de los módulos se calcula según la distancia y se refleja en el presupuesto. Conocemos la normativa local de cada zona donde trabajamos."}}]}</script>
+
+<!-- ===== BOTON FLOTANTE DE WHATSAPP (05/09/2026) ===== -->
+<a href="https://wa.me/34602484547?text=Hola%2C%20me%20interesa%20una%20vivienda%20modular%20Oikos.%20%C2%BFPodr%C3%ADais%20informarme%3F"
+   target="_blank" rel="noopener" class="wa-float" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wa-float-txt">Pide presupuesto</span>
+</a>
 </body>
 </html>
