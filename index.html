@@ -675,6 +675,40 @@ body{-webkit-font-smoothing:antialiased}
 .faq-item[open]{border-color:rgba(192,101,58,0.45)}
 .faq-item[open] summary{color:var(--terra)}
 
+
+/* --- 4. LOGO MAS VISIBLE EN EL ENCABEZADO (05/09/2026) --- */
+.logo img{
+  height:54px !important;          /* antes 40px */
+  border-radius:4px !important;    /* antes 50%: recortaba el logo en elipse */
+  box-shadow:0 2px 10px rgba(28,28,24,0.12);
+}
+nav{padding:12px 64px}             /* menos alto para compensar el logo mayor */
+@media (max-width:1350px){ nav{padding:11px 32px} }
+@media (max-width:820px){ nav{padding:10px 16px} .logo img{height:46px !important} }
+@media (max-width:600px){ .logo img{height:42px !important} }
+.logo-tag{font-size:12px;letter-spacing:0.22em}
+.hero{padding-top:86px}            /* el nav es fijo: hueco para que no tape el hero */
+html{scroll-padding-top:96px}      /* los enlaces del menu no dejan el titulo debajo del nav */
+
+
+/* --- 5. CONTACTO: texto mas grande y con mas contraste (05/09/2026) --- */
+.form-left p{
+  font-size:1.06rem;                    /* antes 0.95rem */
+  line-height:1.85;
+  color:rgba(226,222,214,0.88);         /* antes gris al 65%, se lela mal sobre oscuro */
+}
+.trust-row p{
+  font-size:1rem;                       /* antes 0.87rem */
+  line-height:1.7;
+  color:rgba(226,222,214,0.85);
+}
+.trust-row p strong{color:var(--white);font-weight:600}
+.trust-icon{width:38px;height:38px}
+.trust-icon svg{width:19px;height:19px}
+.trust-list{gap:1.3rem}
+.form-box h3{font-size:1.28rem}
+.form-box p{font-size:0.98rem;line-height:1.7}
+
 </style>
 </head>
 <body>
@@ -1436,8 +1470,11 @@ window.addEventListener('DOMContentLoaded',()=>{
       </p>
     </div>
 
-    <p class="fade-up" style="font-size:0.75rem;color:var(--text-muted);margin:0 0 0.7rem;letter-spacing:0.04em">
-      Desliza la tabla lateralmente para ver todos los sistemas &rarr;
+    <p class="fade-up" style="display:inline-flex;align-items:center;gap:0.5rem;
+       font-size:1rem;font-weight:600;color:var(--terra);margin:0 0 0.9rem;letter-spacing:0.02em;
+       background:var(--terra-soft);padding:0.6rem 1.1rem;border-radius:3px">
+      Desliza la tabla lateralmente para ver todos los sistemas
+      <span style="font-size:1.25rem;line-height:1">&rarr;</span>
     </p>
 
     <div class="fade-up" style="overflow-x:auto;-webkit-overflow-scrolling:touch">
